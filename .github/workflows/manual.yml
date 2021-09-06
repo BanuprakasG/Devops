@@ -13,11 +13,11 @@ jobs:
       uses: appleboy/scp-action@master
 
       with: 
-        host: 3.6.160.126
+        host: ${{ secrets_HOST }}
         key: ${{ secrets_KEY }}
-        username: ubuntu
-        port: 22
-        password: pwsd
+        username: ${{ secrets_USERNAME }}
+        port: ${{ secrets_PORT }}
+        password: ${{ secrets_PASSWORD }}
         source: "."
         target: /var/www/html/
         
