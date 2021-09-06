@@ -1,17 +1,19 @@
-  name: scp files
-   push:
-   branches: [ main ]
-jobs: on push
-build:
+name: scp files
+on: [push]
+jobs:
+
+  build:
     name: Build
     runs-on: ubuntu-20.04
-    steps:
-    - uses: actions/checkout@main
-    - name: copy file via ssh password
+    steps: 
+    - 
+      uses: actions/checkout@main
+    - 
+      name: "copy file via ssh password"
       uses: appleboy/scp-action@main
-      with:
-        host: 13.233.58.152
-        username: root
+      with: 
+        host: "13.233.58.152"
         password: passwd
-        source: "/"
-        target: "/var/www/html/"
+        source: /
+        target: /var/www/html/
+        username: root
