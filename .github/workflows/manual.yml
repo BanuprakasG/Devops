@@ -15,7 +15,7 @@ jobs:
       with: 
         host: 3.6.160.126
         key: ${{ secrets.KEY }}
-        username: root
+        username: ubuntu
         port: 22
         password: pwsd
         source: "."
